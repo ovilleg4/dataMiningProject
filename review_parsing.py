@@ -63,8 +63,8 @@ with open('yelp_academic_dataset_review.json', encoding='utf8') as fileobject:
                  tmpList.append(data['stars'])
                  parseInfo.append(tmpList)
                  index = index + 1
-         if index == 1000:
-             break
+         if index == 9000:
+            break
          #print(reviewedD =ay)
          
   
@@ -190,10 +190,17 @@ def getDailyBasisScore(index):
     return dailyScores;
     
     
-
+    
+target = open('output.txt', 'w')
 indx = 0
 for id in businessID:
+    score = getDailyBasisScore(indx)
+    for val in score :
+        val_to_str = "%.9f " % val
+        target.write(val_to_str)
+    target.write("\n")
     print(id)
-    print(getDailyBasisScore(indx))
+    #print(getDailyBasisScore(indx))
     print("-----------------------------------------------------")    
     indx = indx + 1
+target.close()

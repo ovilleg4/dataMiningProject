@@ -44,6 +44,6 @@ with open('yelp_academic_dataset_business.json', encoding='utf8') as fileobject:
                    
 
 
-for index in restaurant_IDS:
-    print(index)
+#for index in restaurant_IDS:
+ #   print(index)
          
